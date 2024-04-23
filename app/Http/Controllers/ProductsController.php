@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,8 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('products', compact('products'));
+        $comments = Comment::all();
+        return view('products', compact('products', 'comments'));
     }
 
     /**

@@ -5,5 +5,7 @@
     @foreach ($products as $product)
         @include('layout.product')
     @endforeach
+    @include('comments.comment_form')
+    @include('comments.comment')
 </div>
 @endsection
