@@ -50,4 +50,15 @@ class CommentsController extends Controller
 
         return redirect()->back()->with('success', 'Comment approved successfully!');
     }
+
+    public function destroy(Comment $comment)
+    {
+        if (!auth()->user()->isAdmin) {
+            abort(403, 'Unauthorized action.');
+        }
+
+        $comment->delete();
+
+        return redirect()->route('comments.pending')->with('success', 'Comment deleted successfully!');
+    }
 }

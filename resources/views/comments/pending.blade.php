@@ -20,6 +20,11 @@
                         @method('PUT')
                         <button type="submit" class="btn mt-2 btn-outline-success">Approve</button>
                     </form>
+                    <form action="{{ route('comments.destroy', $comment) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn mt-2 btn-outline-danger">Delete</button>
+                    </form>                    
                 </div>
 
                 @endforeach
