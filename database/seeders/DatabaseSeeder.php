@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         ProductsSeeder::run();
+        UsersSeeder::run();
     }
 }

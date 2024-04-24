@@ -27,6 +27,10 @@ class CommentsController extends Controller
 
     public function pending()
     {
+        if (!auth()->check()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         if (!auth()->user()->isAdmin) {
             abort(403, 'Unauthorized action.');
         }
